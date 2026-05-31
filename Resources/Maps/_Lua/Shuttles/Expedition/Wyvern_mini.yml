@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.1.0
   forkId: dsfrontier
   forkVersion: 27052026233034
-  time: 05/31/2026 12:23:16
-  entityCount: 1921
+  time: 05/31/2026 17:24:08
+  entityCount: 1922
 maps: []
 grids:
 - 1
@@ -6478,7 +6478,7 @@ entities:
       parent: 1
 - proto: CleanerGrenade
   entities:
-  - uid: 1917
+  - uid: 1918
     components:
     - type: Transform
       pos: 12.244705,6.3455944
@@ -9594,7 +9594,7 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 1918
+  - uid: 1919
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -9602,7 +9602,7 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 1919
+  - uid: 1920
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -9900,7 +9900,7 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 1920
+  - uid: 1921
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -9908,7 +9908,7 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 1921
+  - uid: 1922
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -11165,6 +11165,16 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,21.5
       parent: 1
+- proto: Nakrutka5
+  entities:
+  - uid: 1917
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,11.5
+      parent: 1
+    - type: StaticPrice
+      price: 250000
 - proto: NFHolopadShip
   entities:
   - uid: 297
