@@ -4,13 +4,9 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems
 {
-    public sealed class OwOAccentSystem : EntitySystem
+    public sealed class FelinidAccentSystem : EntitySystem
     {
         [Dependency] private readonly IRobustRandom _random = default!;
-
-        private static readonly IReadOnlyList<string> Faces = new List<string>{
-            " (•`ω´•)", " ;;w;;", " owo", " UwU", " >w<", " ^w^"
-        }.AsReadOnly();
 
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
@@ -19,7 +15,7 @@ namespace Content.Server.Speech.EntitySystems
 
         public override void Initialize()
         {
-            SubscribeLocalEvent<OwOAccentComponent, AccentGetEvent>(OnAccent);
+            SubscribeLocalEvent<FelinidAccentComponent, AccentGetEvent>(OnAccent);
         }
 
         public string Accentuate(string message)
@@ -29,15 +25,14 @@ namespace Content.Server.Speech.EntitySystems
                 message = message.Replace(word, repl);
             }
 
-            return message.Replace("!", _random.Pick(Faces))
-                .Replace("r", "w").Replace("R", "W")
+            return message.Replace("r", "w").Replace("R", "W")
                 .Replace("l", "w").Replace("L", "W")
                 //Start ru locale
                 .Replace("р", "в").Replace("Р", "В")
                 .Replace("л", "в").Replace("Л", "В");
         }
 
-        private void OnAccent(EntityUid uid, OwOAccentComponent component, AccentGetEvent args)
+        private void OnAccent(EntityUid uid, FelinidAccentComponent component, AccentGetEvent args)
         {
             args.Message = Accentuate(args.Message);
         }
