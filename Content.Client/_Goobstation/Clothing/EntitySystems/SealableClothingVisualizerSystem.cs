@@ -12,14 +12,14 @@
 
 using System.Linq;
 using Content.Client.Clothing;
-using Content.Goobstation.Client.Clothing.Components;
-using Content.Goobstation.Shared.Clothing;
+using Content.Client._Goobstation.Clothing.Components;
+using Content.Shared._Goobstation.Clothing;
 using Content.Shared.Clothing;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Robust.Client.GameObjects;
 
-namespace Content.Goobstation.Client.Clothing.EntitySystems;
+namespace Content.Client._Goobstation.Clothing.EntitySystems;
 
 public sealed class SealableClothingVisualizerSystem : VisualizerSystem<SealableClothingVisualsComponent>
 {

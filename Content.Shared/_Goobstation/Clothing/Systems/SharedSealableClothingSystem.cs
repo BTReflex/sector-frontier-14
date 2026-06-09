@@ -14,7 +14,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Clothing.Components;
+using Content.Shared._Goobstation.Clothing.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
@@ -39,7 +39,7 @@ using Vector2 = System.Numerics.Vector2;
 using Content.Shared.Silicons.StationAi;
 
 
-namespace Content.Shared.Clothing.Systems;
+namespace Content.Shared._Goobstation.Clothing.Systems;
 
 /// <summary>
 ///     System used for sealable clothing (like modsuits)

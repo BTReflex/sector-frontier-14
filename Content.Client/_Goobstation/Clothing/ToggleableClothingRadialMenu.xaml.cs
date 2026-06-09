@@ -16,7 +16,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.Clothing;
+namespace Content.Client._Goobstation.Clothing;
 
 public sealed partial class ToggleableClothingRadialMenu : RadialMenu
 {

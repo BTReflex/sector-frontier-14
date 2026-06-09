@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Common.Clothing;
+namespace Content.Server._Goobstation.Clothing.Common;
 /// <summary>
 ///     Represents the results of a lookup in terms of "equippability" for an entity considering their species, body part availability, and clothing presence.
 /// </summary>

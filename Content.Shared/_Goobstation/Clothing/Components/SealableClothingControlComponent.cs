@@ -12,13 +12,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Clothing.Systems;
+using Content.Shared._Goobstation.Clothing.Systems;
 using Content.Shared.Inventory;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Clothing.Components;
+namespace Content.Shared._Goobstation.Clothing.Components;
 
 /// <summary>
 ///     Component used to designate contol of sealable clothing. It'll contain action to seal clothing.

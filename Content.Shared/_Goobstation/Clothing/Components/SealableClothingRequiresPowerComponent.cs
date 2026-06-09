@@ -12,7 +12,7 @@ using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Clothing.Components;
+namespace Content.Shared._Goobstation.Clothing.Components;
 
 [RegisterComponent]
 [NetworkedComponent, AutoGenerateComponentState]
