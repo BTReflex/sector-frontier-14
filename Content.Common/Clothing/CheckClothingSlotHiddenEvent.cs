@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Server._Goobstation.Clothing.Common;
+namespace Content.Common.Clothing;
 
 [ByRefEvent]
-public record struct GetActualMapLayerEvent(string MapLayer);
+public record struct CheckClothingSlotHiddenEvent(string Slot, bool Visible = true);
