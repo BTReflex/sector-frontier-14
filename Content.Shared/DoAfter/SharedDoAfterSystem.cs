@@ -118,6 +118,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             doAfterArgs.Used = EnsureEntity<DoAfterComponent>(doAfterArgs.NetUsed, uid);
             doAfterArgs.User = EnsureEntity<DoAfterComponent>(doAfterArgs.NetUser, uid);
             doAfterArgs.EventTarget = EnsureEntity<DoAfterComponent>(doAfterArgs.NetEventTarget, uid);
+            doAfterArgs.ShowTo = EnsureEntity<DoAfterComponent>(doAfterArgs.NetShowTo, uid);
         }
 
         comp.NextId = state.NextId;
@@ -202,6 +203,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         args.NetUsed = GetNetEntity(args.Used);
         args.NetUser = GetNetEntity(args.User);
         args.NetEventTarget = GetNetEntity(args.EventTarget);
+        args.NetShowTo = GetNetEntity(args.ShowTo);
 
         if (args.BreakOnMove)
             doAfter.UserPosition = Transform(args.User).Coordinates;

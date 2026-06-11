@@ -10,8 +10,6 @@
 
 using Content.Shared._Goobstation.Clothing.Components;
 using Content.Shared._Goobstation.Clothing.Systems;
-using Content.Shared.Clothing.Components;
-using Content.Shared.Clothing.Systems;
 using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Shared.Alert;
@@ -37,7 +35,6 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, PowerCellChangedEvent>(OnPowerCellChanged);
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, PowerCellSlotEmptyEvent>(OnPowerCellEmpty);
         SubscribeLocalEvent<SealableClothingRequiresPowerComponent, ClothingControlSealCompleteEvent>(OnRequiresPowerSealCompleteEvent);
-        SubscribeLocalEvent<SealableClothingRequiresPowerComponent, InventoryRelayedEvent<FindBatteryEvent>>(OnFindBatteryEvent);
     }
 
     private void OnPowerCellChanged(Entity<SealableClothingRequiresPowerComponent> entity, ref PowerCellChangedEvent args)
@@ -116,15 +113,4 @@ public sealed partial class PoweredSealableClothingSystem : SharedPoweredSealabl
         _alertsSystem.ShowAlert(controlComp.WearerEntity.Value, comp.SuitPowerAlert, (short) severity);
     }
 
-    /// <summary>
-    /// Tries to find battery for charger
-    /// </summary>
-    private void OnFindBatteryEvent(Entity<SealableClothingRequiresPowerComponent> entity, ref InventoryRelayedEvent<FindBatteryEvent> args)
-    {
-        if (args.Args.FoundBattery != null)
-            return;
-
-        if (_powerCellSystem.TryGetBatteryFromSlot(entity, out var battery, out var batteryComp))
-            args.Args.FoundBattery = (battery.Value, batteryComp);
-    }
 }

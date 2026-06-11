@@ -10,7 +10,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Goobstation.Shared.Clothing;
+namespace Content.Shared._Goobstation.Clothing;
 
 [Serializable, NetSerializable]
 public enum SealableClothingVisuals : byte

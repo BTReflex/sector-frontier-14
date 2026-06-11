@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Goobstation.Clothing;
 using Content.Shared._Goobstation.Clothing.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
@@ -123,7 +124,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
 
         var slot = control.Comp.RequiredControlSlot.ToString().ToLowerInvariant();
         var wearer = control.Comp.WearerEntity;
-        _inventorySystem.TryUnequip(wearer.Value, wearer.Value, slot, force:true);
+        _inventorySystem.TryUnequip(wearer.Value, wearer.Value, slot, force: true);
         _inventorySystem.TryEquip(wearer.Value, wearer.Value, control, slot, force: true);
         control.Comp.UnequipAfterUnseal = false;
     }
@@ -427,7 +428,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
                 return false;
             }
 
-            comp.ProcessQueue.Enqueue(EntityManager.GetNetEntity(sealeable));
+            comp.ProcessQueue.Enqueue(GetNetEntity(sealeable));
         }
 
         comp.IsInProcess = true;
@@ -457,7 +458,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
                 return;
             }
 
-            var processingPart = EntityManager.GetEntity(comp.ProcessQueue.Dequeue());
+            var processingPart = GetEntity(comp.ProcessQueue.Dequeue());
             Dirty(control);
 
             if (!TryComp<SealableClothingComponent>(processingPart, out var sealableComponent) || !comp.IsInProcess)
@@ -488,7 +489,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
                 comp.IsCurrentlySealed ? sealableComponent.SealDownPopup : sealableComponent.SealUpPopup,
                 ("partName", Identity.Name(processingPart, EntityManager))
             );
-            var type = comp.IsCurrentlySealed ?  PopupType.SmallCaution :  PopupType.Small;
+            var type = comp.IsCurrentlySealed ? PopupType.SmallCaution : PopupType.Small;
             _popupSystem.PopupCoordinates(popupText, popupCoords, comp.WearerEntity.Value, type);
 
             break;
@@ -512,7 +513,7 @@ public abstract class SharedSealableClothingSystem : EntitySystem
         foreach (var part in attachedParts)
         {
             if (TryComp<SealableClothingComponent>(part, out var pSeal) && pSeal.IsSealed)
-                    continue;
+                continue;
             allpartsSealed = false;
             break;
         }

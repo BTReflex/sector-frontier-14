@@ -9,6 +9,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Clothing.Components;
+using Content.Shared._Goobstation.Clothing;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell;
 using Content.Shared.Wires;

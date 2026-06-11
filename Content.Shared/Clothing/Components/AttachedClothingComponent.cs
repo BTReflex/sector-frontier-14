@@ -1,5 +1,6 @@
 using Content.Shared.Clothing.EntitySystems;
 using Robust.Shared.GameStates;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Clothing.Components;
 
@@ -13,9 +14,16 @@ namespace Content.Shared.Clothing.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AttachedClothingComponent : Component
 {
+    public const string DefaultClothingContainerId = "replaced-clothing";
     /// <summary>
     ///     The Id of the piece of clothing that this entity belongs to.
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid AttachedUid;
+
+    [DataField, AutoNetworkedField]
+    public string ClothingContainerId = DefaultClothingContainerId;
+
+    [ViewVariables]
+    public ContainerSlot ClothingContainer = default!;
 }

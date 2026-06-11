@@ -814,6 +814,11 @@ public sealed class ToggleableClothingSystem : EntitySystem
         // If there's no body part associated with the slot, we can equip the clothing.
         return EquipAbility.CanEquip;
     }
+
+    public void ToggleClothing(EntityUid uid, EntityUid value, ToggleableClothingComponent outerClothingSuit)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public sealed partial class ToggleClothingEvent : InstantActionEvent
