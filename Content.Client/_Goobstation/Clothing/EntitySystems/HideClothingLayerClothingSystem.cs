@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client._Goobstation.Clothing.Components;
-using Content.Server._Goobstation.Clothing.Common;
+using Content.Shared._Goobstation.Clothing.Common;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
