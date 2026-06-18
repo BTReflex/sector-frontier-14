@@ -5,7 +5,7 @@
 - type: soundCollection
   id: VulpkaninMaleScreams
   files:
-    - /Audio/_Lua/Voice/Vulpkanin/male_fox_scream1.ogg
+    - //male_fox_scream1.ogg
     - /Audio/_Lua/Voice/Vulpkanin/male_fox_scream2.ogg
 
 - type: soundCollection
@@ -50,3 +50,8 @@
   files:
     - /Audio/_Lua/Voice/Vulpkanin/fox_laugh1.ogg
     - /Audio/_Lua/Voice/Vulpkanin/fox_laugh2.ogg
+
+- type: soundCollection
+  id: VulpkaninThrill
+  files:
+    - /Audio/_Lua/Voice/Vulpkanin/fox_ururur.ogg
