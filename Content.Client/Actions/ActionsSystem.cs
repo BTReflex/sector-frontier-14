@@ -2,7 +2,6 @@ using System.IO;
 using System.Linq;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
-using Content.Shared.Actions.Systems;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Mapping;
 using Content.Shared.Maps;
@@ -56,7 +55,6 @@ namespace Content.Client.Actions
             SubscribeLocalEvent<ActionsComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
             SubscribeLocalEvent<ActionsComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
             SubscribeLocalEvent<ActionsComponent, ComponentHandleState>(OnHandleState);
-            SubscribeLocalEvent<InstantActionComponent, ComponentHandleState>(OnInstantHandleState);
 
             SubscribeLocalEvent<ActionComponent, AfterAutoHandleStateEvent>(OnActionAutoHandleState);
 
@@ -64,76 +62,22 @@ namespace Content.Client.Actions
             SubscribeLocalEvent<WorldTargetActionComponent, ActionTargetAttemptEvent>(OnWorldTargetAttempt);
         }
 
-        private void OnInstantHandleState(EntityUid uid, InstantActionComponent component, ref ComponentHandleState args)
-        {
-            if (args.Current is not InstantActionComponentState state)
-                return;
-
-            BaseHandleState<InstantActionComponent>(uid, component, state);
-        }
-        private void OnEntityTargetHandleState(EntityUid uid, EntityTargetActionComponent component, ref ComponentHandleState args)
-
-        {
-            if (args.Current is not EntityTargetActionComponentState state)
-                return;
-
-            component.Whitelist = state.Whitelist;
-            component.Blacklist = state.Blacklist;
-            component.CanTargetSelf = state.CanTargetSelf;
-            BaseHandleState<EntityTargetActionComponent>(uid, component, state);
-        }
-
-        private void BaseHandleState<T>(EntityUid uid, BaseActionComponent component, BaseActionComponentState state) where T : BaseActionComponent
-        {
-            // TODO ACTIONS use auto comp states
-            component.Icon = state.Icon;
-            component.IconOn = state.IconOn;
-            component.IconColor = state.IconColor;
-            component.OriginalIconColor = state.OriginalIconColor;
-            component.DisabledIconColor = state.DisabledIconColor;
-            component.Keywords.Clear();
-            component.Keywords.UnionWith(state.Keywords);
-            component.Enabled = state.Enabled;
-            component.Toggled = state.Toggled;
-            component.Cooldown = state.Cooldown;
-            component.UseDelay = state.UseDelay;
-            component.Charges = state.Charges;
-            component.MaxCharges = state.MaxCharges;
-            component.RenewCharges = state.RenewCharges;
-            component.Container = EnsureEntity<T>(state.Container, uid);
-            component.EntityIcon = EnsureEntity<T>(state.EntityIcon, uid);
-            component.CheckCanInteract = state.CheckCanInteract;
-            component.CheckConsciousness = state.CheckConsciousness;
-            component.ClientExclusive = state.ClientExclusive;
-            component.Priority = state.Priority;
-            component.AttachedEntity = EnsureEntity<T>(state.AttachedEntity, uid);
-            component.RaiseOnUser = state.RaiseOnUser;
-            component.RaiseOnAction = state.RaiseOnAction;
-            component.AutoPopulate = state.AutoPopulate;
-            component.Temporary = state.Temporary;
-            component.ItemIconStyle = state.ItemIconStyle;
-            component.Sound = state.Sound;
-
-            UpdateAction(uid, component);
-        }
         private void OnActionAutoHandleState(Entity<ActionComponent> ent, ref AfterAutoHandleStateEvent args)
         {
             UpdateAction(ent);
         }
 
-        public override void UpdateAction(EntityUid? actionId, BaseActionComponent? action = null)
+        public override void UpdateAction(Entity<ActionComponent> ent)
         {
-            if (!ResolveActionData(actionId, ref action))
-                return;
-
-            action.IconColor = action.Charges < 1 ? action.DisabledIconColor : action.OriginalIconColor;
-
-            base.UpdateAction(actionId, action);
-            if (_playerManager.LocalEntity != action.AttachedEntity)
+            // TODO: Decouple this.
+            ent.Comp.IconColor = _sharedCharges.GetCurrentCharges(ent.Owner) == 0 ? ent.Comp.DisabledIconColor : ent.Comp.OriginalIconColor;
+            base.UpdateAction(ent);
+            if (_playerManager.LocalEntity != ent.Comp.AttachedEntity)
                 return;
 
             ActionsUpdated?.Invoke();
         }
+
         private void OnHandleState(Entity<ActionsComponent> ent, ref ComponentHandleState args)
         {
             if (args.Current is not ActionsComponentState state)
