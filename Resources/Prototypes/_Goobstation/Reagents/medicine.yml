@@ -90,7 +90,6 @@
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           types:
             Heat: -1.5
@@ -146,7 +145,6 @@
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           types:
             Blunt: -2
