@@ -62,6 +62,7 @@ namespace Content.Client.Actions
             SubscribeLocalEvent<WorldTargetActionComponent, ActionTargetAttemptEvent>(OnWorldTargetAttempt);
         }
 
+
         private void OnActionAutoHandleState(Entity<ActionComponent> ent, ref AfterAutoHandleStateEvent args)
         {
             UpdateAction(ent);
