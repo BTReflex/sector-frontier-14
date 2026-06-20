@@ -90,7 +90,7 @@
     sprintModifier: 0.85
 
 - type: entity
-  parent: [ClothingOuterHardsuitJuggernaut, BaseC3CentCommContraband] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
+  parent: [ClothingOuterHardsuitJuggernaut, BaseC2ContrabandUnredeemable] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
   id: ClothingOuterHardsuitTSFMCM92
   name: TSFMC M92 tacsuit
   description: A heavy tacsuit, capable of taking a lot of physical damage.
@@ -158,7 +158,7 @@
     sprintModifier: 0.95
 
 - type: entity
-  parent: [BaseC3CentCommContraband, ClothingOuterHardsuitJuggernaut]  #Lua-changes: BaseC2ContrabandUnredeemable > BaseC3CentCommContraband,added EnergyShieldClothing
+  parent: [BaseC2ContrabandUnredeemable, ClothingOuterHardsuitJuggernaut]  #Lua-changes: BaseC2ContrabandUnredeemable > BaseC3CentCommContraband,added EnergyShieldClothing
   id: ClothingOuterHardsuitTSFMCM92-X
   name: TSFMC M92-X tacsuit
   description: A experimental modification of the M92 tacsuit for spec-ops units of the TSFMC. Externally the same, internally its higher-quality alloys and fabric.
@@ -199,7 +199,7 @@
 
 #Security Combat Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseNFNfsd, BaseC3CentCommContraband] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
+  parent: [ClothingOuterHardsuitBaseNFNfsd, BaseC2ContrabandUnredeemable] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
   id: ClothingOuterHardsuitTSFMCM93
   name: TSFMC M93 tacsuit
   description: A heavily armored TSFMC suit. Space proof, with thick armor plating at the expense of mobility.
@@ -234,7 +234,7 @@
 
 #Security Command Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBaseNFNfsd, BaseC3CentCommContraband] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
+  parent: [ClothingOuterHardsuitBaseNFNfsd, BaseC2ContrabandUnredeemable] #Lua-changes: added EnergyShieldClothing and BaseC3CentCommContraband
   id: ClothingOuterHardsuitTSFMCM93-C
   name: TSFMC M93-C tacsuit
   description: A variant of the M93 tacsuit with slightly better plating. It isn't much extra.
