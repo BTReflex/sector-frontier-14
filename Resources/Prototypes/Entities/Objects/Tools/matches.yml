@@ -125,8 +125,7 @@
     - matchbox2
     - matchbox3
   - type: Appearance
-  - type: SpaceGarbage
-    cleanupExempt: false # Mono
+
 
 - type: entity
   parent: [Matchbox, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
