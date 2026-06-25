@@ -125,9 +125,8 @@
     - matchbox2
     - matchbox3
   - type: Appearance
-  - type: Tag
-    tags:
-    - Trash
+  - type: SpaceGarbage
+    cleanupExempt: false # Mono
 
 
 - type: entity
