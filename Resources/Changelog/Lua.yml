@@ -4347,3 +4347,26 @@ Entries:
   id: 303
   time: '2026-06-22T08:55:57.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/593
+- author: KiraFaust
+  changes:
+    - type: Add
+      message: Добавлены ступеньки различного вида (включены в меню строительства)
+    - type: Add
+      message: Добавлены ручки глав отделов
+    - type: Add
+      message: Добавлены различные бумажные штуки
+    - type: Add
+      message: Добавлены кровати с автолечением
+    - type: Add
+      message: Новая униформа ДСБФ (появится в ДСБФ Дробе!)
+    - type: Tweak
+      message: Изменена система вирусологии, включая анализатор "Дельта-Экстрим"
+    - type: Tweak
+      message: Изменены размеры и мощности различных джетпаков
+    - type: Add
+      message: Пробирки с вирусами
+    - type: Add
+      message: Плюшевые игрушки важных людей
+  id: 304
+  time: '2026-06-25T15:59:29.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/592
