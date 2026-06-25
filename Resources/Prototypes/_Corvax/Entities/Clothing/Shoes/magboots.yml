@@ -24,8 +24,10 @@
       - 0.153853429 # oxygen
       - 0.153853429 # nitrogen
   - type: Item
-    sprite: null
+    sprite: Corvax/Clothing/Shoes/Boots/jetboots.rsi
     size: Normal
+    shape: # Lua
+      - 0,0,3,2 # Lua
   - type: StaticPrice
     price: 1500
 
