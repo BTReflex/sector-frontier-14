@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.1.0
   forkId: dsfrontier
   forkVersion: 27062026012739
-  time: 06/27/2026 19:09:28
-  entityCount: 1924
+  time: 06/27/2026 19:15:39
+  entityCount: 1925
 maps: []
 grids:
 - 1
@@ -6565,6 +6565,13 @@ entities:
     - type: Transform
       pos: 11.5,14.5
       parent: 1
+- proto: ComputerWallmountWithdrawBankATM
+  entities:
+  - uid: 1925
+    components:
+    - type: Transform
+      pos: 11.5,0.5
+      parent: 1
 - proto: CryoPod
   entities:
   - uid: 768
@@ -12127,8 +12134,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 19.5,-16.5
       parent: 1
-    - type: Thruster
-      enabled: False
     - type: ApcPowerReceiver
       powerLoad: 1
   - uid: 1557
