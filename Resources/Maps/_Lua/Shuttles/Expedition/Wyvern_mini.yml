@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.1.0
   forkId: dsfrontier
   forkVersion: 27062026012739
-  time: 06/27/2026 12:43:26
-  entityCount: 1922
+  time: 06/27/2026 19:09:28
+  entityCount: 1924
 maps: []
 grids:
 - 1
@@ -4144,6 +4144,7 @@ entities:
   - uid: 296
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 19.5,15.5
       parent: 1
 - proto: ButtonFrameExit
@@ -11023,13 +11024,6 @@ entities:
     - type: Transform
       pos: 16.5,17.5
       parent: 1
-- proto: KitchenElectricGrill
-  entities:
-  - uid: 1393
-    components:
-    - type: Transform
-      pos: 16.5,16.5
-      parent: 1
 - proto: KitchenElectricRange
   entities:
   - uid: 1394
@@ -11870,6 +11864,28 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 17.5,1.5
       parent: 1
+- proto: SinkStemlessWater
+  entities:
+  - uid: 1393
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,16.5
+      parent: 1
+- proto: SinkWide
+  entities:
+  - uid: 1923
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,5.5
+      parent: 1
+  - uid: 1924
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 5.5,13.5
+      parent: 1
 - proto: SmallFloorLightMiddle
   entities:
   - uid: 1515
@@ -11976,6 +11992,7 @@ entities:
   - uid: 1534
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 19.5,14.5
       parent: 1
 - proto: StasisBed
