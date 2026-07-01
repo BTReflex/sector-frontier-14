@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.1.0
   forkId: dsfrontier
   forkVersion: 27062026012739
-  time: 06/27/2026 19:15:39
-  entityCount: 1925
+  time: 07/01/2026 09:38:55
+  entityCount: 1929
 maps: []
 grids:
 - 1
@@ -4158,6 +4158,12 @@ entities:
     components:
     - type: Transform
       pos: 5.5,0.5
+      parent: 1
+  - uid: 1927
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,-16.5
       parent: 1
 - proto: CableApcExtension
   entities:
@@ -11099,6 +11105,13 @@ entities:
     - type: Transform
       pos: 18.5,18.5
       parent: 1
+- proto: LockerResearchDirectorFilledHardsuit
+  entities:
+  - uid: 1929
+    components:
+    - type: Transform
+      pos: 19.5,4.5
+      parent: 1
 - proto: LockerWallColorMedicalFilled
   entities:
   - uid: 1405
@@ -11106,6 +11119,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,17.5
+      parent: 1
+- proto: LockerWallColorSalvage
+  entities:
+  - uid: 1926
+    components:
+    - type: Transform
+      pos: 20.5,0.5
       parent: 1
 - proto: LockerWallMaterialsFuelAmeJarFilled
   entities:
@@ -11205,21 +11225,6 @@ entities:
       parent: 1
     - type: Physics
       bodyType: Static
-- proto: Paper
-  entities:
-  - uid: 1418
-    components:
-    - type: Transform
-      pos: 8.444862,-10.506626
-      parent: 1
-    - type: Paper
-      stampState: paper_stamp-ce
-      stampedBy:
-      - reapply: False
-        stampType: RubberStamp
-        stampedColor: '#C69B17FF'
-        stampedName: stamp-component-stamped-name-ce
-      content: На данном шаттле для электропитания используется один ДАМ. Второй является резервным для нужд атмосферных техников.
 - proto: PhotocopierBase
   entities:
   - uid: 1419
@@ -11488,7 +11493,7 @@ entities:
   - uid: 1462
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 1.5707963267948966 rad
       pos: 23.5,2.5
       parent: 1
   - uid: 1463
@@ -11545,6 +11550,13 @@ entities:
     components:
     - type: Transform
       pos: 5.5,1.5
+      parent: 1
+- proto: ShuttleControlTabletSalvage
+  entities:
+  - uid: 1418
+    components:
+    - type: Transform
+      pos: 11.44281,4.4498253
       parent: 1
 - proto: ShuttleWindow
   entities:
@@ -11760,7 +11772,33 @@ entities:
       parent: 1
 - proto: SignalButton
   entities:
+  - uid: 1508
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 11.5,4.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        6:
+        - - Pressed
+          - DoorBolt
+- proto: SignalButtonDirectional
+  entities:
   - uid: 1506
+    components:
+    - type: Transform
+      pos: 21.5,0.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        14:
+        - - Pressed
+          - DoorBolt
+        15:
+        - - Pressed
+          - DoorBolt
+  - uid: 1507
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -11768,19 +11806,19 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
+        862:
+        - - Pressed
+          - Toggle
+        861:
+        - - Pressed
+          - Toggle
         855:
         - - Pressed
           - Toggle
         856:
         - - Pressed
           - Toggle
-        861:
-        - - Pressed
-          - Toggle
-        862:
-        - - Pressed
-          - Toggle
-  - uid: 1507
+  - uid: 1509
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -11800,32 +11838,6 @@ entities:
         855:
         - - Pressed
           - Toggle
-  - uid: 1508
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 11.5,4.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        6:
-        - - Pressed
-          - DoorBolt
-- proto: SignalButtonDirectional
-  entities:
-  - uid: 1509
-    components:
-    - type: Transform
-      pos: 21.5,0.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        14:
-        - - Pressed
-          - DoorBolt
-        15:
-        - - Pressed
-          - DoorBolt
   - uid: 1510
     components:
     - type: Transform
@@ -11837,6 +11849,17 @@ entities:
         - - Pressed
           - DoorBolt
         13:
+        - - Pressed
+          - DoorBolt
+  - uid: 1928
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,-16.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        291:
         - - Pressed
           - DoorBolt
 - proto: SignBridge
@@ -12201,8 +12224,6 @@ entities:
       parent: 1
     - type: ApcPowerReceiver
       powerLoad: 1
-    - type: Thruster
-      enabled: False
 - proto: ThrusterMedium
   entities:
   - uid: 1568
