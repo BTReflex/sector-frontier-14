@@ -6,7 +6,7 @@
   id: Wyvern_mini
   parent: BaseVessel
   name: Wyvern mini
-  description: Списанная уменьшеная версия универсального флагмана верфи LaFleur Industries.
+  description: Списанная уменьшеная версия универсального флагмана верфи LaFleur Industries
   price: 410000
   category: Medium
   group: Expedition
