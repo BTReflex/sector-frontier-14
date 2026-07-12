@@ -4406,3 +4406,18 @@ Entries:
   id: 306
   time: '2026-06-26T12:20:39.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/595
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Добавлена система репутации игрока
+    - type: Add
+      message: Добавлена система репутации администрации
+    - type: Remove
+      message: Удален маскировочный проектор
+    - type: Tweak
+      message: Редизайн Ahelp меню
+    - type: Fix
+      message: Исправил удаление шаттла после парковки
+  id: 307
+  time: '2026-07-12T17:37:26.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/605
