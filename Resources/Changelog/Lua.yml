@@ -4421,3 +4421,10 @@ Entries:
   id: 307
   time: '2026-07-12T17:37:26.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/605
+- author: BTReflex
+  changes:
+    - type: Fix
+      message: Исправлены ошибки Виверны Мини
+  id: 308
+  time: '2026-07-12T17:49:25.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/603
