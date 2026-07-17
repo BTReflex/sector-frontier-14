@@ -4435,3 +4435,32 @@ Entries:
   id: 309
   time: '2026-07-12T17:49:49.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/602
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Добавлены объявления войны лидерами фракций
+    - type: Add
+      message: Добавлен захват станций
+    - type: Add
+      message: Добавлен выбор фракций на этапе создания персонажа
+    - type: Tweak
+      message: Изменено меню управления фракциями
+    - type: Add
+      message: Добавлен брифинг первого входа
+    - type: Add
+      message: Добавлены оповещения и брифинги о начале войны
+    - type: Add
+      message: Возвращены пираты
+    - type: Add
+      message: Некоторые роли и станции теперь зависят от выбранной фракции
+    - type: Add
+      message: Добавлена информация о войнах фракций в гайде
+    - type: Remove
+      message: Удалены диски секторов, теперь все сектора доступны
+    - type: Add
+      message: Теперь у станций есть фракция
+    - type: Add
+      message: Во время войны у станций отключается защита
+  id: 310
+  time: '2026-07-17T21:13:34.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/607
