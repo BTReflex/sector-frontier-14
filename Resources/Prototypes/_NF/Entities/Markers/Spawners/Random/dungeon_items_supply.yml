@@ -269,7 +269,7 @@
     prototypes:
     # Computers
     - ComputerIFFCircuitboard
-    - ComputerStarmapDiskMergerCircuitboard
+    #- ComputerStarmapDiskMergerCircuitboard
     # Lathes
     - AutolatheMachineCircuitboard
     - OreProcessorMachineCircuitboard

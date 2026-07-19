@@ -41,9 +41,9 @@
         variation: 0.125
     activatedDamage:
       types:
-        Slash: 15
         Heat: 15
-        Structural: 20
+        Structural: 100
+    ignoreResistances: true #Lua add
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1
@@ -71,7 +71,7 @@
       - state: inhand-right-blade
         shader: unshaded
   - type: Reflect
-    reflectProb: .09
+    reflectProb: .2
     spread: 10
   - type: IgnitionSource
     temperature: 700
@@ -146,8 +146,8 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 10
             Heat: 10
+    ignoreResistances: true #Lua add
     deactivatedSecret: true
   - type: ItemToggleActiveSound
     activeSound: null
@@ -210,8 +210,8 @@
         variation: 0.250
     activatedDamage:
       types:
-        Slash: 10
         Heat: 10
+    ignoreResistances: true #Lua add
   - type: ComponentToggler
     components:
     - type: Sharp
@@ -279,8 +279,8 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Slash: 10
             Heat: 12
+    ignoreResistances: true #Lua add
     deactivatedSecret: true
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_cutlass.rsi
@@ -319,9 +319,9 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 12
             Heat: 12
-            Structural: 15
+            Structural: 100
+    ignoreResistances: true #Lua add
   - type: ItemToggleActiveSound
     activeSound: null
   - type: ComponentToggler
@@ -353,7 +353,7 @@
     size: Small
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
-    reflectProb: .12
+    reflectProb: .4
     spread: 10
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
@@ -379,9 +379,9 @@
         variation: 0.250
     activatedDamage:
       types:
-        Slash: 20
         Heat: 20
-        Structural: 20
+        Structural: 100
+    ignoreResistances: true #Lua add
   - type: MeleeRequiresWield
   - type: HeldSpeedModifier #slowdown is what balances this compared to a dsword
     walkModifier: 0.6
@@ -406,7 +406,7 @@
     size: Small
     sprite: Objects/Weapons/Melee/hypereutactic_blade_inhands.rsi
   - type: Reflect
-    reflectProb: .09
+    reflectProb: .2
     spread: 10
 
 # Borgs

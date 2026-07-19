@@ -10,7 +10,7 @@
     attackRate: 1.6
     damage:
       types:
-        Slash: 30 # Seem important to keep the message from goob.// Fuck you.
+        Slash: 45 # Seem important to keep the message from goob.// Fuck you.
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
