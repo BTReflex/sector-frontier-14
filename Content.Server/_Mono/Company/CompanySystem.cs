@@ -143,9 +143,17 @@ public sealed class CompanySystem : EntitySystem
 
         companyComp.CompanyName = companyId;
         Dirty(uid, companyComp);
-        SyncNpcFactions(uid, companyId);
+        SyncNpcFactions(uid, oldCompanyId, companyId);
 
         RaiseLocalEvent(uid, new CompanySetEvent(oldCompanyId, companyId, changed));
+    }
+
+    public void UpdateStoredCompanyPreference(EntityUid uid, string companyId)
+    {
+        if (!TryComp<ActorComponent>(uid, out var actor))
+            return;
+
+        _playerOriginalCompanies[actor.PlayerSession.UserId.ToString()] = companyId;
     }
 
     public bool CanSeeCompany(EntityUid target, EntityUid examiner, CompanyComponent? targetCompany = null)
@@ -202,23 +210,21 @@ public sealed class CompanySystem : EntitySystem
         return $"[color=yellow]{targetCompany.CompanyName}[/color]";
     }
 
-    private void SyncNpcFactions(EntityUid uid, string? companyId)
+    private void SyncNpcFactions(EntityUid uid, string? oldCompanyId, string? newCompanyId)
     {
-        var managedFactions = GetCompanyNpcFactions();
-        var targetFactions = GetTargetNpcFactions(companyId);
+        var oldCompanyFactions = GetTargetNpcFactions(oldCompanyId);
+        var newCompanyFactions = GetTargetNpcFactions(newCompanyId);
 
-        if (!TryComp(uid, out NpcFactionMemberComponent? npcFactionComp) && targetFactions.Count == 0)
+        if (!TryComp(uid, out NpcFactionMemberComponent? npcFactionComp) && newCompanyFactions.Count == 0)
             return;
 
-        foreach (var faction in managedFactions)
-        {
-            _npcFaction.RemoveFaction(uid, faction);
-        }
-
-        foreach (var faction in targetFactions)
-        {
-            _npcFaction.AddFaction(uid, faction);
-        }
+        npcFactionComp ??= EnsureComp<NpcFactionMemberComponent>(uid);
+        var removedFactions = oldCompanyFactions.Count == 0 ? newCompanyFactions : oldCompanyFactions;
+        var baseFactions = new HashSet<ProtoId<NpcFactionPrototype>>(npcFactionComp.Factions);
+        baseFactions.ExceptWith(removedFactions);
+        _npcFaction.ClearFactions((uid, npcFactionComp), dirty: false);
+        _npcFaction.AddFactions((uid, npcFactionComp), baseFactions, dirty: false);
+        _npcFaction.AddFactions((uid, npcFactionComp), newCompanyFactions, dirty: true);
     }
 
     private HashSet<ProtoId<NpcFactionPrototype>> GetCompanyNpcFactions()
