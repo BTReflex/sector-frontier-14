@@ -432,8 +432,7 @@ namespace Content.Server.Administration.Systems
                     return;
                 }
                 var summary = await _dbManager.GetReputationSummary(record.Kind, record.TargetUserId);
-                _reputation.SetCachedScore(record.Kind, record.TargetUserId, summary.Score);
-                await _dbManager.IncrementAdminAHelpResolvedCount(state.LastAdminId.Value.UserId, DateTimeOffset.UtcNow);
+                _reputation.SetCachedReputation(record.Kind, record.TargetUserId, new ReputationSystem.CachedReputation(summary.Score, summary.PositiveVotes, summary.NegativeVotes));
                 state.RatingSubmitted = true;
                 SendSystemMessage(channel, Loc.GetString("bwoink-system-admin-rating-submitted", ("admin", state.LastAdminName)));
                 BroadcastConversationState(channel);
@@ -919,10 +918,8 @@ namespace Content.Server.Administration.Systems
             var adminReputation = string.Empty;
             if (!fromWebhook && senderAdmin?.HasFlag(AdminFlags.Adminhelp, includeDeAdmin: true) == true)
             {
-                var score = _reputation.GetCachedScore(ReputationTargetKind.Admin, senderId);
-                var scoreText = score > 0 ? $"+{score}" : score.ToString();
-                var scoreColor = score > 0 ? "green" : score < 0 ? "red" : "white";
-                var coloredScore = $"[color={scoreColor}]{scoreText}[/color]";
+                var repCached = _reputation.GetCachedReputation(ReputationTargetKind.Admin, senderId);
+                var coloredScore = $"[color=red]-{repCached.Negative}[/color]/[color=green]+{repCached.Positive}[/color]";
                 adminReputation = $" [color=gray]({Loc.GetString("reputation-ahelp-admin-score", ("score", coloredScore))})[/color]";
             }
             if (senderAdmin is not null &&
@@ -961,6 +958,9 @@ namespace Content.Server.Administration.Systems
             bwoinkText = $"{(message.AdminOnly ? Loc.GetString("bwoink-message-admin-only") : !message.PlaySound ? Loc.GetString("bwoink-message-silent") : "")}{(fromWebhook ? Loc.GetString("bwoink-message-discord") : "")} {bwoinkText}: {escapedText}";
 
             var senderAHelpAdmin = senderAdmin?.HasFlag(AdminFlags.Adminhelp, includeDeAdmin: true) ?? false; // Lua deadmin mod
+            if (!fromWebhook && senderAHelpAdmin && senderId != SystemUserId)
+                _ = IncrementAdminAHelpMessageCountAsync(senderId.UserId);
+
             UpdateConversationFromMessage(message.UserId, senderId, senderName, senderAHelpAdmin, message.AdminOnly, fromWebhook);
             // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.
             var playSound = (!senderAHelpAdmin || message.PlaySound) && !message.AdminOnly;
@@ -1082,6 +1082,18 @@ namespace Content.Server.Administration.Systems
             }
         }
         // End Frontier: webhook text messages
+
+        private async Task IncrementAdminAHelpMessageCountAsync(Guid adminUserId)
+        {
+            try
+            {
+                await _dbManager.IncrementAdminAHelpResolvedCount(adminUserId, DateTimeOffset.UtcNow);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to increment admin AHelp message count for {adminUserId}: {ex}");
+            }
+        }
 
         private IList<INetChannel> GetNonAfkAdmins()
         {

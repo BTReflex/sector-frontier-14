@@ -67,14 +67,6 @@ namespace Content.Client.Lobby
         {
             var collection = IoCManager.Instance!;
 
-            if (Preferences.Characters.TryGetValue(slot, out var existingProfile) &&
-                profile is HumanoidCharacterProfile incomingHumanoid &&
-                existingProfile is HumanoidCharacterProfile existingHumanoid)
-            {
-                if (!string.Equals(existingHumanoid.Company, "None", StringComparison.OrdinalIgnoreCase))
-                    profile = incomingHumanoid.WithCompany(existingHumanoid.Company);
-            }
-
             // Verify company exists if this is a humanoid profile
             if (profile is HumanoidCharacterProfile humanoidProfile)
             {
@@ -88,11 +80,6 @@ namespace Content.Client.Lobby
             }
 
             profile.EnsureValid(_playerManager.LocalSession!, collection);
-            var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters) {[slot] = profile};
-            Preferences = new PlayerPreferences(characters, Preferences.SelectedCharacterIndex, Preferences.AdminOOCColor, Preferences.ConstructionFavorites);
-
-            if (slot == Preferences.SelectedCharacterIndex)
-                OnSelectedCharacterChanged?.Invoke();
 
             var msg = new MsgUpdateCharacter
             {
