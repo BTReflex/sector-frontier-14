@@ -47,7 +47,7 @@
       clickDamageModifier: 1.2
       damage:
         types:
-          Slash: 30
+          Slash: 15
       mustBeEquippedToUse: true
       animation: WeaponArcClaw
       wideAnimation: WeaponArcClaw
@@ -119,7 +119,6 @@
         types:
           Slash: 10 #7
           Structural: 20
-      ignoreResistances: true #Lua add
       animation: WeaponArcClaw
       soundHit:
         path: /Audio/_Lua/Weapons/Guns/Mantis/mantis-slash.ogg
