@@ -423,8 +423,6 @@
       path: /Audio/Items/Toys/rawr.ogg
     animation: WeaponArcBite
   - type: Speech
-  - type: ReplacementAccent
-    accent: RoarAccent
   - type: Tag
     tags:
     - Payload
