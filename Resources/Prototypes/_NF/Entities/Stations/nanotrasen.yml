@@ -216,6 +216,19 @@
   components:
   - type: Transform
 
+#заглушка для шаттлов эксп которые юзают вессел
+- type: entity
+  id: StandardFrontierSecurityExpeditionVessel
+  parent:
+  - StandardFrontierSecurityVessel
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: StandardFrontierExpeditionVessel
+  parent:
+  - StandardFrontierVessel
+  categories: [ HideSpawnMenu ]
+
 - type: entity
   id: StandardLuaTechSecurityVessel
   parent:
