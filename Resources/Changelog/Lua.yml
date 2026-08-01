@@ -4640,3 +4640,12 @@ Entries:
   id: 316
   time: '2026-08-01T12:34:41.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/615
+- author: HacksLua
+  changes:
+    - type: Fix
+      message: >-
+        Шаттл теперь корректно возвращается с телом игрока с экспедиции если тот
+        успел до крита/смерти вернуться на него
+  id: 317
+  time: '2026-08-01T12:35:17.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/616
