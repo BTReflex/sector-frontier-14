@@ -4620,3 +4620,14 @@ Entries:
   id: 314
   time: '2026-08-01T09:56:23.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/610
+- author: BTReflex
+  changes:
+    - type: Add
+      message: Добавлена плюшевая Анемоня
+    - type: Fix
+      message: Исправлены патроны 12.7х99
+    - type: Fix
+      message: 'Исправлена возможность отключить акцент фелинидов '
+  id: 315
+  time: '2026-08-01T10:01:07.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/612
