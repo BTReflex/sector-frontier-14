@@ -4649,3 +4649,22 @@ Entries:
   id: 317
   time: '2026-08-01T12:35:17.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/616
+- author: HacksLua
+  changes:
+    - type: Tweak
+      message: Полностью переработан UI вкладки MAP в консоли управления шаттлом
+    - type: Tweak
+      message: Туманности теперь закрашены внутри своим цветом
+    - type: Tweak
+      message: >-
+        Переработана полностью погода в туманностях, теперь она более лояльная к
+        игрокам
+    - type: Tweak
+      message: Некоторые туманности учитывают наличие щита у корабля
+    - type: Fix
+      message: >-
+        Исправлены границы туманностей, теперь урон проходит только внутри
+        туманностей
+  id: 318
+  time: '2026-08-01T22:42:49.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/617
