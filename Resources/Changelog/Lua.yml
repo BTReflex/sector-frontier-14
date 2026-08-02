@@ -4668,3 +4668,10 @@ Entries:
   id: 318
   time: '2026-08-01T22:42:49.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/617
+- author: fox76055
+  changes:
+    - type: Tweak
+      message: Изменена отрисовка ночного видения.
+  id: 319
+  time: '2026-08-02T13:15:48.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/618
