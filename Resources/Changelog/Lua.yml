@@ -4675,3 +4675,54 @@ Entries:
   id: 319
   time: '2026-08-02T13:15:48.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/618
+- author: 25Hydra08
+  changes:
+    - type: Add
+      message: Добавлены новые следы джетов
+    - type: Add
+      message: Добавлены ключи шифрования в аплинки
+    - type: Tweak
+      message: Изменены шансы спавна мусорной фауны
+    - type: Tweak
+      message: >-
+        Изменены цены на покупку ТК в контравенде и аплинке синдиката (Синдикат
+        15к, остальные 150к)
+    - type: Tweak
+      message: Удалены конвертеры Таможенных Кредитов и Дублонов
+    - type: Tweak
+      message: Изменены параметры прибытия Бархана-8
+    - type: Tweak
+      message: Изменены цены за продажу Красной Споры
+    - type: Tweak
+      message: Изменены цены на газы (варимые стали дороже)
+    - type: Tweak
+      message: Добавлены и заменены новые спрайты видимых газов
+    - type: Tweak
+      message: Изменено время скана растений
+    - type: Tweak
+      message: Изменены параметры прибытия геймрулов
+    - type: Tweak
+      message: Ремап Чёрного рынка by Maksimvini
+    - type: Tweak
+      message: Ремап МЦ by Maksimvini & 25Hydra08
+    - type: Tweak
+      message: Ремап АСБ by Maksimvini & 25Hydra08
+    - type: Tweak
+      message: Ремап АЭ by Maksimvini
+    - type: Tweak
+      message: Ремап Нордфолла by 25Hydra08
+    - type: Fix
+      message: >-
+        Немного исправлен баланс в угоду рп взаимодействию, согласно текущему
+        фидбеку.
+    - type: Fix
+      message: Убрано гниение с шампуров
+    - type: Fix
+      message: В пояс СИ теперь тоже вставляются оружия
+    - type: Fix
+      message: Пофикшены абьюзы ТК
+    - type: Fix
+      message: Убран насильный якорь со всех ПОИ в базе
+  id: 320
+  time: '2026-08-04T16:05:20.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/619
