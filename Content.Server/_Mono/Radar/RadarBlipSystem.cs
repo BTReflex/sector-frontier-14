@@ -140,7 +140,6 @@ public sealed partial class RadarBlipSystem : EntitySystem
                     blipVelocity = _physics.GetMapLinearVelocity(blipUid, blipPhysics, blipXform);
 
                 var distance = (_xform.GetWorldPosition(blipXform) - radarPosition).Length();
-
                 float maxDistance = blip.MaxDistance;
                 var radarMax = component?.MaxRange ?? SharedRadarConsoleSystem.DefaultMaxRange;
                 var allowedDistance = Math.Min(maxDistance, radarMax);

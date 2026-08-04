@@ -456,3 +456,19 @@
 #       - NukeOpsUplink
 #       - TypanUplink
 
+#region Enc. Key
+
+- type: listing
+  id: UplinkEncryptionKeyOutpostTypan # mag
+  name: красный ключ шифрования
+  description: Ключ шифрования, используемый... хм... кем же?
+  productEntity: EncryptionKeyOutpostTypan
+  cost:
+    Speso: 2000
+  categories:
+    - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - TypanUplink
