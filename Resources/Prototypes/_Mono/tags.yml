@@ -118,22 +118,22 @@
 - type: Tag
   id: Magazine45_ACPFMJBox
 
-#45 magnum tags
+#357 magnum tags
 
 - type: Tag
-  id: Cartridge45_magnumFMJ
+  id: Cartridge357_magnumFMJ
 
 - type: Tag
-  id: Magazine45_magnumPistolHighCapacityFMJ
+  id: Magazine357_magnumPistolHighCapacityFMJ
 
 - type: Tag
-  id: SpeedLoader45_magnumFMJ
+  id: SpeedLoader357_magnumFMJ
 
 - type: Tag
-  id: Magazine45_magnumPistolFMJ
+  id: Magazine357_magnumPistolFMJ
 
 - type: Tag
-  id: Magazine45_magnumSubMachineGunFMJ
+  id: Magazine357_magnumSubMachineGunFMJ
 
 #9x19mm tags
 
@@ -153,6 +153,9 @@
   id: Magazine9x19mmSubMachineGunTopMountedFMJ
 
 - type: Tag
+  id: Magazine45_ACPSubMachineGunTopMountedFMJ
+
+- type: Tag
   id: Magazine9x19mmFMJBox
 
 - type: Tag
@@ -162,6 +165,9 @@
 
 - type: Tag
   id: MilitaryPowerCellMG
+
+- type: Tag
+  id: LargeMilitaryPowerCell
 
 - type: Tag
   id: PPLCell
@@ -397,20 +403,6 @@
 - type: Tag
   id: MachineBoard3x3
 
-# Ship Ammo
-
-- type: Tag
-  id: Asm220Torpedo
-
-- type: Tag
-  id: CharonSlug
-
-- type: Tag
-  id: 150mmShell
-
-- type: Tag
-  id: LightFighterOrdinance
-
 # Ship repair (Mono)
 
 - type: Tag
@@ -440,73 +432,7 @@
   id: ShuttleAIIgnore
 
 - type: Tag
-  id: 120mmCartridge
+  id: Magazine4Gauge
 
 - type: Tag
-  id: R300Shell
-
-- type: Tag
-  id: Magazine140mm
-
-- type: Tag
-  id: 140mmCartridge
-
-- type: Tag
-  id: 20mmCartridge
-
-- type: Tag
-  id: Magazine30mm
-
-- type: Tag
-  id: 30mmCartridge
-
-- type: Tag
-  id: Magazine57mm
-
-- type: Tag
-  id: 57mmCartridge
-
-- type: Tag
-  id: Magazine90mm
-
-- type: Tag
-  id: 90mmCartridge
-
-- type: Tag
-  id: 220mmCartridge
-
-- type: Tag
-  id: 255mmCartridge
-
-- type: Tag
-  id: VanykCartridge
-
-- type: Tag
-  id: VanykCartridgeUnguided
-
-- type: Tag
-  id: VanykMagazine
-
-- type: Tag
-  id: MissileCartridge50mm
-
-- type: Tag
-  id: MissileMagazine50mm
-
-- type: Tag
-  id: TovekCartridge
-
-- type: Tag
-  id: VanquisherMagazine
-
-- type: Tag
-  id: MissileCartridge250mm
-
-- type: Tag
-  id: PaladinMagazine
-
-- type: Tag
-  id: SunnyCartridge
-
-- type: Tag
-  id: SunnyMagazine
+  id: JackShotgunBackpack
