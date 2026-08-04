@@ -4726,3 +4726,48 @@ Entries:
   id: 320
   time: '2026-08-04T16:05:20.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/619
+- author: HacksLua
+  changes:
+    - type: Tweak
+      message: >-
+        Удалены все турели монолита которые были ранее и импортированы вновь
+        полностью с монолита без изменений
+    - type: Tweak
+      message: >-
+        Старые турели _Lua были переведены полностью на работу по логике турелей
+        Monolith
+    - type: Fix
+      message: >-
+        Исправлена химеризация из частей тел (возможно я упустил на каких-то
+        расах)
+    - type: Fix
+      message: Щит больше не мешает распаковать Flatpack
+    - type: Fix
+      message: Скрытый баг банкоматов исправлен
+    - type: Add
+      message: >-
+        Добавлена Verb кнопка (ПКМ по своему персонажу) сообщить координаты,
+        позволяет раскрыть известный вам сектор собеседнику
+    - type: Tweak
+      message: >-
+        Фракционные сервера готовы к заполнению технологиями, редактор
+        технологий обновлён
+    - type: Add
+      message: Добавлены внешние декорации с Monolith на обшивку корабля
+    - type: Add
+      message: Добавлен Большой ЛКП
+    - type: Add
+      message: Добавлено 2 новых дрона с Monolith
+    - type: Fix
+      message: Мобы больше не умеют ходить по космосу
+    - type: Add
+      message: Добавлен Автодок с Goob-Station и переработан под режим фронтира
+    - type: Add
+      message: Добавлен Автохирург с Monolith
+    - type: Add
+      message: 'Добавлено больше кибернетических частей тела '
+    - type: Add
+      message: Для мапперов новая игрушка блюспейс-реактор B.R0-200 кВт
+  id: 321
+  time: '2026-08-04T16:51:28.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/620
