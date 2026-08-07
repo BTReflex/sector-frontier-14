@@ -4771,3 +4771,30 @@ Entries:
   id: 321
   time: '2026-08-04T16:51:28.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/620
+- author: HacksLua
+  changes:
+    - type: Remove
+      message: Удалено вооружение Fallout и RMC
+    - type: Tweak
+      message: >-
+        Обновлена логика стрельбы со всего вида вооружений, полу монолитовская
+        логика
+    - type: Tweak
+      message: Добавлена индустриальная ветка технологий в РНД, новые руководства.
+    - type: Tweak
+      message: РНД пересортирован
+    - type: Tweak
+      message: У гранаты с металлической пеной удалено создание тайлов
+    - type: Tweak
+      message: >-
+        Больше ничего не привязывается к шаттлу, вы можете смело откручивать всё
+        что вам нужно
+    - type: Tweak
+      message: Стены выровнены под статы Monolith
+    - type: Tweak
+      message: Оптимизация Туманностей
+    - type: Fix
+      message: HOTFIX утечки RAM
+  id: 322
+  time: '2026-08-07T15:49:39.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/623
