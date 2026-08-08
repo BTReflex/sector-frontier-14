@@ -4798,3 +4798,20 @@ Entries:
   id: 322
   time: '2026-08-07T15:49:39.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/623
+- author: HacksLua
+  changes:
+    - type: Tweak
+      message: Улучшена логика враждебных ИИ шаттлов и автопилот
+    - type: Fix
+      message: Исправлена утечка RAM связанная с хирургией
+    - type: Fix
+      message: Исправлена утечка RAM связанная с консолью управления шаттлом
+    - type: Fix
+      message: Исправлена ошибка RadarBlip связанная с планетами
+    - type: Fix
+      message: >-
+        Исправлено отображение корабельных и персональных щитов теперь цвета не
+        наследуются от последнего щита
+  id: 323
+  time: '2026-08-08T00:07:56.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/627
