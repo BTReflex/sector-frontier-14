@@ -4815,3 +4815,20 @@ Entries:
   id: 323
   time: '2026-08-08T00:07:56.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/627
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Добавлена контрабанда Nanotrasen для Синдиката
+    - type: Add
+      message: Добавлена консоль технологий для получения ТК за технологии Nanotrasen
+    - type: Add
+      message: Добавлен терминал выплат за подконтрольные станции
+    - type: Tweak
+      message: Полный рефактор Автодока, операции стали проще быстрее и понятнее
+    - type: Tweak
+      message: Вентиляторы теперь разрушаются
+    - type: Tweak
+      message: Новая руда литий и медь спавнятся на планетах и астероидах
+  id: 324
+  time: '2026-08-09T16:28:48.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/629
