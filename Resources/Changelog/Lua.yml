@@ -4832,3 +4832,36 @@ Entries:
   id: 324
   time: '2026-08-09T16:28:48.0000000+00:00'
   url: https://github.com/Lua-Frontier/sector-frontier-14/pull/629
+- author: HacksLua
+  changes:
+    - type: Add
+      message: Добавлены новые параллаксы а так же настройки графики для них
+    - type: Add
+      message: Добавлена публичная оферта
+    - type: Tweak
+      message: У Аукционеров ящики заменены на гифт боксы
+    - type: Tweak
+      message: >-
+        Увеличена дистанция обзора на консолях а так же дальность отрисовки
+        меток
+    - type: Fix
+      message: Ивенты перенесены в ПА
+    - type: Fix
+      message: ДД перенесены в ПА
+    - type: Fix
+      message: Доставка грузов теперь только на торговые терминалы
+    - type: Fix
+      message: Исправил разрушаемость руды крушителем
+    - type: Fix
+      message: Восстановлен КД на взятие оружия
+    - type: Fix
+      message: Снижен урон турелям _Lua
+    - type: Fix
+      message: Исправлена стрельба с консоли вооружения при смещении радара
+    - type: Fix
+      message: Шаттлы больше невозможно распознать смещением радара
+    - type: Remove
+      message: 'Удалено веселье! :cat_xdd:'
+  id: 325
+  time: '2026-08-10T14:31:52.0000000+00:00'
+  url: https://github.com/Lua-Frontier/sector-frontier-14/pull/631
